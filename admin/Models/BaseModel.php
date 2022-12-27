@@ -1,6 +1,6 @@
 <?php
 
-class BaseModel extends Database
+abstract class BaseModel extends Database
 {
     public function __construct()
     {

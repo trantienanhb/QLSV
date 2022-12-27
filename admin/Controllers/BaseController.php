@@ -1,6 +1,6 @@
 <?php
 
-class BaseController
+abstract class BaseController
 {
     const VIEW_FOLDER = 'Views';
     const MODEL_FOLDER ='Models';

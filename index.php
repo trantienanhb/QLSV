@@ -1,2 +1,2 @@
 <?php
-header('location:/testQLSV/QLSV/admin?Controller=login&action=loginuser');
+header('location: /QLSV/admin?Controller=login&action=loginuser');

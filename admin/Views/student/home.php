@@ -28,7 +28,7 @@ session_start();
     <h3 align="center">Welcome Sun</h3>
     <br />
     <p><a href="logout.php">Logout</a></p>
-    <p><a href="/testQLSV/QLSV/admin?Controller=student&action=index">Sinh Viên</a></p>
+    <p><a href="/QLSV/admin?Controller=student&action=index">Sinh Viên</a></p>
 </div>
 </body>
 </html>

@@ -12,7 +12,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Container wrapper -->
     <div class="container">
-
+            
 
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarButtonsExample">
@@ -24,15 +24,26 @@
 
             <div class="d-flex align-items-center">
             <!-- header('location:/testQLSV/QLSV/admin?Controller=student&action=loginuser');    -->
-                <a href="/testQLSV/QLSV/admin?Controller=login&action=loginuser">
+            
+                <a href="/QLSV/admin?Controller=login&action=loginuser">
+              
                 <button type="button" class="btn btn-primary me-3">
                    Logout
                 </button>
                 </a>
+
             </div>
+            
         </div>
+        
         <!-- Collapsible wrapper -->
     </div>
     <!-- Container wrapper -->
 </nav>
+<?php if(isset($data["error"])){ ?>
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+             <?php echo $data["error"] ?>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             <?php }?>
+        </div>
 <!-- Navbar -->

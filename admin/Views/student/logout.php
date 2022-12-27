@@ -7,5 +7,5 @@ if (isset($_COOKIE["username"]) AND isset($_COOKIE["password"])){
     setcookie("password", '', time() - (3600));
 }
 unset($_SESSION["username"]);
-header('location:/testQLSV/QLSV/admin?Controller=login&action=loginuser');
+header('location:/QLSV/admin?Controller=login&action=loginuser');
 ?>
