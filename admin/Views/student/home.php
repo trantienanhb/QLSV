@@ -23,10 +23,9 @@
 <div class="container box">
     <h3 style="text-align: center">Welcome Sun</h3>
     <br />
-    <p><a href="/QLSV/admin/index.php?Controller=login&action=index">Logout</a></p>
+    <p><a href="/QLSV/admin/index.php?Controller=login&action=logout">Logout</a></p>
     <p><a href="/QLSV/admin/index.php?Controller=student&action=index">Sinh Viên</a></p>
     
 </div>
 </body>
 </html>
- 

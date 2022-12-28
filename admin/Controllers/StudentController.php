@@ -13,7 +13,7 @@ class StudentController extends BaseController
     public function index(){
         
         if (empty($_SESSION["user"])) {
-            return $this->header("location: /QLSV/admin/index.php?Controller=login&action=index");
+            return $this->view('student.login');
         }
         
         $infoStudents = $this->StudentModel->getAllStudent();
@@ -23,7 +23,7 @@ class StudentController extends BaseController
 
     public function create(){
         if (empty($_SESSION["user"])) {
-            return $this->header("location: /QLSV/admin/index.php?Controller=login&action=index");
+            return $this->view('student.login');
         }
         return $this->view('student.create');
     }
@@ -79,7 +79,7 @@ class StudentController extends BaseController
         $id = $_GET['id'];
         $student = $this->StudentModel->getById($id);
         if (empty($_SESSION["user"])) {
-            return $this->header("location: /QLSV/admin/index.php?Controller=login&action=index");
+            return $this->view('student.login');
         }
         return $this->view('student.update', ['student' => $student]);
     }

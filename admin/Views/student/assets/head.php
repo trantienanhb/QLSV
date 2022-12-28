@@ -1,8 +1,3 @@
-<?php
-if (empty($_SESSION["user"])) {
-    return $this->header("location: /QLSV/admin/index.php?Controller=login&action=index");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +12,12 @@ if (empty($_SESSION["user"])) {
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Container wrapper -->
     <div class="container">
-            
+    <a href="http://localhost/QLSV/admin/index.php?Controller=login&action=home" >
+              
+              <button type="button" class="btn btn-primary me-3">
+                 Home
+              </button>
+              </a>
 
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarButtonsExample">

@@ -23,7 +23,7 @@
 <body>
 <div class="container box">
     <form action="/QLSV/admin/index.php?Controller=login&action=loginuser" method="POST" id="frmLogin">
-        <h3 align="center">PHP Login </h3><br />
+        <h3 style="text-align: center">PHP Login </h3><br />
         <div class="text-danger">  </div>
         <div class="form-group">
             <label for="">Username</label>
@@ -41,7 +41,12 @@
             <div><input  type="submit" name="login" value="Login" class="btn btn-success"></span></div>
         </div>
     </form>
-    
+    <?php
+        if (isset($_SESSION['message'])){
+            echo $_SESSION['message'];
+        }
+        unset($_SESSION['message']);
+        ?>
     <br />
     <span>
 

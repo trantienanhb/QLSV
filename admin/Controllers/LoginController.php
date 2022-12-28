@@ -14,8 +14,17 @@ class LoginController extends BaseController{
     }
 
     public function loginuser(){
+        
         $username = $_POST['username'] ?? '';
-        $password = $_POST['password']?? '';
+        $password = $_POST['password'] ?? '';
+        if (isset($_POST["remember"])) {
+            setcookie ("username",$_POST["username"],time()+ 3600);
+            setcookie ("password",$_POST["password"],time()+ 3600);
+
+        }else{
+            setcookie ("username",'');
+            setcookie ("password",'');
+    }
         if(!$username || !$password) {
             return $this->view('student.login');
         }
@@ -26,14 +35,24 @@ class LoginController extends BaseController{
             $_SESSION['user'] = $user;
             return $this->view('student.home');
         }else{
+            $_SESSION['message']="Nhập lại tài khoản và mật khẩu!";
             return $this->view('student.login');
         }
 
         
+        
+    }
+
+    public function home() {
+        return $this->view('student.home');
     }
 
     public function logout() {
-        
+
+        if (isset($_COOKIE["username"]) AND isset($_COOKIE["password"])){
+            setcookie("username", '', time() - (3600));
+            setcookie("password", '', time() - (3600));
+        }
         unset($_SESSION['user']);
         return $this->view('student.login');
     }
