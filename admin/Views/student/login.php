@@ -1,10 +1,3 @@
-<?php
-session_start();
-
-?>
-<?php
-    
-?>
 <html>
 <head>
     <title>login</title>
@@ -29,9 +22,9 @@ session_start();
 </head>
 <body>
 <div class="container box">
-    <form action="../../../admin/?Controller=login&action=loginuser" method="POST" id="frmLogin">
+    <form action="/QLSV/admin/index.php?Controller=login&action=loginuser" method="POST" id="frmLogin">
         <h3 align="center">PHP Login </h3><br />
-        <div class="text-danger"">  </div>
+        <div class="text-danger">  </div>
         <div class="form-group">
             <label for="">Username</label>
             <input name="username" required type="text" value="<?php if (isset($_COOKIE["username"])){echo $_COOKIE["username"];}?>" placeholder="Username" class="form-control" />
@@ -48,13 +41,7 @@ session_start();
             <div><input  type="submit" name="login" value="Login" class="btn btn-success"></span></div>
         </div>
     </form>
-    <?php
     
-        if (isset($_SESSION['message'])){
-            echo $_SESSION['message'];
-        }
-        unset($_SESSION['message']);
-        ?>
     <br />
     <span>
 

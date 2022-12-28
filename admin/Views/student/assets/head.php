@@ -1,3 +1,8 @@
+<?php
+if (empty($_SESSION["user"])) {
+    return $this->header("location: /QLSV/admin/index.php?Controller=login&action=index");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +30,7 @@
             <div class="d-flex align-items-center">
             <!-- header('location:/testQLSV/QLSV/admin?Controller=student&action=loginuser');    -->
             
-                <a href="/QLSV/admin?Controller=login&action=loginuser">
+                <a href="/QLSV/admin/index.php?Controller=login&action=logout">
               
                 <button type="button" class="btn btn-primary me-3">
                    Logout

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 class LoginController extends BaseController{
 
     public function __construct()
@@ -7,28 +9,33 @@ class LoginController extends BaseController{
         $this->LoginModel = new LoginModel();
     }
 
+    public function index() {
+        return $this->view('student.login');
+    }
+
     public function loginuser(){
-        session_start();
         $username = $_POST['username'] ?? '';
-        $password = $_POST['password'] ?? '';
-            $user = $this -> LoginModel -> getUser($username,$password);
-            if(!empty($user)){
-                header("location: Views/student/home.php");
-            }else{
-                
-                header("Location: Views/student/login.php");
-                $_SESSION['message']="Nhập lại tài khoản và mật khẩu!";
+        $password = $_POST['password']?? '';
+        if(!$username || !$password) {
+            return $this->view('student.login');
+        }
 
-            }
-            if (isset($_POST["remember"])) {
-                    setcookie ("username",$_POST["username"],time()+ 3600);
-                    setcookie ("password",$_POST["password"],time()+ 3600);
+        $user = $this -> LoginModel -> getUser($username,$password);
 
-                }else{
-                    setcookie ("username",'');
-                    setcookie ("password",'');
-            }
+        if(!empty($user)){
+            $_SESSION['user'] = $user;
+            return $this->view('student.home');
+        }else{
+            return $this->view('student.login');
+        }
 
+        
+    }
+
+    public function logout() {
+        
+        unset($_SESSION['user']);
+        return $this->view('student.login');
     }
 
 }

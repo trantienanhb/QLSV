@@ -1,7 +1,3 @@
-<?php
-session_start();
-
-?>
 <html>
 <head>
     <title>Webslesson - Tutorial</title>
@@ -25,10 +21,11 @@ session_start();
 </head>
 <body>
 <div class="container box">
-    <h3 align="center">Welcome Sun</h3>
+    <h3 style="text-align: center">Welcome Sun</h3>
     <br />
-    <p><a href="logout.php">Logout</a></p>
-    <p><a href="/QLSV/admin?Controller=student&action=index">Sinh Viên</a></p>
+    <p><a href="/QLSV/admin/index.php?Controller=login&action=index">Logout</a></p>
+    <p><a href="/QLSV/admin/index.php?Controller=student&action=index">Sinh Viên</a></p>
+    
 </div>
 </body>
 </html>
