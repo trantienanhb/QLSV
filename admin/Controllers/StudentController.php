@@ -46,6 +46,14 @@ class StudentController extends BaseController
             'age' => $_POST['age'],
             'address' => $_POST['address']]); 
         }
+        if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $_POST['name']))
+        {
+            return $this->view('student.create', ['error'=> "Không được nhập kí tự đặc biệt",
+            
+            'name' => $_POST['name'],
+            'age' => $_POST['age'],
+            'address' => $_POST['address']]); 
+        }
         
         if(!is_numeric($_POST['age']) || $_POST['age']<0 ||$_POST['age'] > 100)
         {
@@ -102,6 +110,14 @@ class StudentController extends BaseController
             'age' => $_POST['age'],
             'address' => $_POST['address']]); 
         }
+        if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $_POST['name']))
+            {
+                return $this->view('student.update', ['error'=> "Không được nhập kí tự đặc biệt",
+                
+                'name' => $_POST['name'],
+                'age' => $_POST['age'],
+                'address' => $_POST['address']]); 
+            }
         
         if(!is_numeric($_POST['age']) || $_POST['age']<0 ||$_POST['age'] > 100)
         {
