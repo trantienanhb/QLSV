@@ -19,7 +19,7 @@ class LoginController extends BaseController{
         $password = $_POST['password'] ?? '';
         if (isset($_POST["remember"])) {
             setcookie ("username",$_POST["username"],time()+ 3600);
-            setcookie ("password",$_POST["password"],time()+ 3600);
+            setcookie ("password",password_hash($_POST["password"],PASSWORD_BCRYPT),time()+ 3600);
 
         }else{
             setcookie ("username",'');

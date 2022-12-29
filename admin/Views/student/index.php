@@ -27,7 +27,7 @@ include('assets/head.php');
                 <td><?=$infoStudent['address']?></td>
                 <td>
                     <a href="?Controller=student&action=edit&id=<?=$infoStudent['id']?>" class="btn btn-info">Update</a>
-                    <a href="?Controller=student&action=delete&id=<?=$infoStudent['id']?>" class="btn btn-danger">Delete</a>
+                    <a href="?Controller=student&action=delete&id=<?=$infoStudent['id']?>" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa bản ghi hay không?');">Delete</a>
                 </td>
                 </tr>
 
